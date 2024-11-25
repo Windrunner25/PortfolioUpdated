@@ -13,3 +13,10 @@
 <script>
 import { RouterLink } from "vue-router";
 </script>
+
+<style scoped>
+nav {
+  display: flex;
+  gap: 1rem; /* Adds spacing between links */
+}
+</style>
