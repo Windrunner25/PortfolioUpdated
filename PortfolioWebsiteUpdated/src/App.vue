@@ -1,10 +1,12 @@
 <template>
-  <div>
-    <Toolbar />
-    <main>
-      <RouterView />
-    </main>
-  </div>
+  <v-app>
+    <div class="vue_styling">
+      <Toolbar />
+      <main>
+        <RouterView />
+      </main>
+    </div>
+  </v-app>
 </template>
 
 <script>
