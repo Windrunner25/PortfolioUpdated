@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-left: 20px">
+  <div>
     <h1>About</h1>
     <p>
       As a Computer Science major and past Microsoft 365 intern at TiER1

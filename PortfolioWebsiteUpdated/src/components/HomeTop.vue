@@ -4,16 +4,18 @@ import Socials from "./Socials.vue";
 
 <template>
   <div class="two-column-grid">
-    <div style="margin-top: 50px; margin-left: 20px;">
-      <h1 style="font-size: 50px">Brian Wolf</h1>
-      <h5>Communicator * Problem-Solver * Leader</h5>
+    <div style="display: flex; justify-content: center; align-items: center">
+      <div>
+        <h1 style="font-size: 50px">Brian Wolf</h1>
+        <!-- <h5>Communicator * Problem-Solver * Leader</h5> -->
+      </div>
     </div>
     <div style="display: grid; grid-template-columns: 5fr 1fr">
       <div style="display: flex; justify-content: center; align-items: center">
         <img
-          src="../assets/side-profile.png"
+          src="../assets/side-profile copy.png"
           alt="image of Brian Wolf"
-          height="650x"
+          height="400x"
         />
       </div>
       <Socials />

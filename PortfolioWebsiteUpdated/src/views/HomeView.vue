@@ -1,9 +1,16 @@
 <template>
   <div>
     <HomeTop />
+    <hr />
     <HomeAbout />
+    <hr />
     <HomeSkill />
-    <MapHome />
+    <hr />
+    <HomeMap />
+    <hr />
+    <HomeExperiences />
+    <hr />
+    <HomeFooter/>
   </div>
 </template>
 
@@ -11,7 +18,15 @@
 import HomeAbout from "@/components/HomeAbout.vue";
 import HomeSkill from "@/components/HomeSkill.vue";
 import HomeTop from "@/components/HomeTop.vue";
-import MapHome from "@/components/MapHome.vue";
+import HomeMap from "@/components/HomeMap.vue";
+import HomeExperiences from "@/components/HomeExperiences.vue";
+import HomeFooter from "@/components/HomeFooter.vue";
 </script>
 
-<style></style>
+<style scoped>
+hr {
+  margin: 100px;
+  border: none;
+  border-top: 2px solid var(--vt-c-divider-dark-1);
+}
+</style>
