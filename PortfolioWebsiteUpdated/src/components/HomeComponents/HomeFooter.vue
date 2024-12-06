@@ -9,8 +9,8 @@
   /* position: fixed; */
   top: 0;
   left: 0;
-  width: 100vw; /* Full viewport width */
+  width: 100%;
   margin: 0; /* Remove any default margins */
-  padding: 0;
+  padding: 50px;
 }
 </style>

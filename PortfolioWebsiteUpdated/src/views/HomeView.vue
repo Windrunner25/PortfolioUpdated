@@ -6,21 +6,23 @@
     <hr />
     <HomeSkill />
     <hr />
-    <HomeMap />
+    <HomeMap2 />
     <hr />
     <HomeExperiences />
     <hr />
-    <HomeFooter/>
+    <HomeFooter />
   </div>
 </template>
 
 <script setup lang="ts">
-import HomeAbout from "@/components/HomeAbout.vue";
-import HomeSkill from "@/components/HomeSkill.vue";
-import HomeTop from "@/components/HomeTop.vue";
-import HomeMap from "@/components/HomeMap.vue";
-import HomeExperiences from "@/components/HomeExperiences.vue";
-import HomeFooter from "@/components/HomeFooter.vue";
+import HomeAbout from "@/components/HomeComponents/HomeAbout.vue";
+import HomeSkill from "@/components/HomeComponents/HomeSkill.vue";
+import HomeTop from "@/components/HomeComponents/HomeTop.vue";
+import HomeMap from "@/components/HomeComponents/HomeMap.vue";
+import HomeExperiences from "@/components/HomeComponents/HomeExperiences.vue";
+import HomeFooter from "@/components/HomeComponents/HomeFooter.vue";
+import HomeMap2 from "@/components/HomeComponents/HomeMap2.vue";
+import HomeTitle from "@/components/HomeComponents/HomeTitle.vue";
 </script>
 
 <style scoped>
