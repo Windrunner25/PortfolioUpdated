@@ -15,7 +15,6 @@ export default defineComponent({
   props: {
     Adjective: {
       type: String, // Specify the expected type
-      required: true, // Mark it as required
     },
     Icon: {
       type: String,
