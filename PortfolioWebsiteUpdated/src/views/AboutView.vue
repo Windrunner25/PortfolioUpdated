@@ -6,6 +6,8 @@
     <AboutSkills />
     <hr />
     <AboutOil />
+    <hr />
+    <HomeFooter />
   </div>
 </template>
 
@@ -13,6 +15,7 @@
 import AboutImage from "@/components/AboutComponents/AboutImage.vue";
 import AboutOil from "@/components/AboutComponents/AboutOil.vue";
 import AboutSkills from "@/components/AboutComponents/AboutSkills.vue";
+import HomeFooter from "@/components/HomeComponents/HomeFooter.vue";
 </script>
 
 <style>
