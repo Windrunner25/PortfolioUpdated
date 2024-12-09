@@ -1,11 +1,11 @@
 <template>
-    <div>
-      <h1>Contact</h1>
-    </div>
-  </template>
-  
-  
-  <style>
-  
-  </style>
-  
+  <div>
+    <ContactForm />
+  </div>
+</template>
+
+<script setup lang="ts">
+import ContactForm from "@/components/ContactComponents/contactForm.vue";
+</script>
+
+<style></style>
