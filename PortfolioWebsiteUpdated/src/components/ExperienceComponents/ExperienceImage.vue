@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { useImageStore } from "@/stores/ExperienceImageStore";
+import { useImageStore } from "@/stores/ExperienceTextStore";
 
 export default experienceImage({
   setup() {

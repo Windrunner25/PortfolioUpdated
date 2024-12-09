@@ -1,11 +1,12 @@
 <template>
   <div>
-    <h1>Experience</h1>
     <ExperienceTop />
+    <ExperienceDetails />
   </div>
 </template>
 
 <script setup lang="ts">
+import ExperienceDetails from "@/components/ExperienceComponents/ExperienceDetails.vue";
 import ExperienceTop from "@/components/ExperienceComponents/ExperienceTop.vue";
 </script>
 

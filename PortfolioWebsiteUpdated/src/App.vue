@@ -11,6 +11,8 @@
 
 <script>
 import Toolbar from "@/components/Toolbar.vue";
+import db from "./firebase/init.js";
+import { collection, addDoc } from "firebase/firestore";
 
 export default {
   name: "App",

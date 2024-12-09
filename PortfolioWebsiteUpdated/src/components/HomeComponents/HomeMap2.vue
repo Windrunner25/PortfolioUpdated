@@ -56,8 +56,8 @@ export default {
           x: 54.92,
           y: 21.91,
           location: "Nisswa, MN",
-          company: "Baringa Partners",
-          role: "Data & Analytics Consulting",
+          company: "Camp Lincoln for Boys",
+          role: "Camp Counselor",
         },
       ],
     };

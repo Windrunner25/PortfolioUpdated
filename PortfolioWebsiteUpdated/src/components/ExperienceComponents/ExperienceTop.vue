@@ -1,4 +1,5 @@
 <template>
+  <img class="banner-image" src="../../assets/chicago.jpg" />
   <div class="map-container">
     <img src="../../assets/map.png" class="map-image" />
     <div
@@ -6,7 +7,9 @@
       :key="index"
       class="map-point-wrapper"
       :style="{ top: point.y + '%', left: point.x + '%' }"
-      @click="handleClick()"
+      @click="handleClick"
+      @mouseover="hoveredIndex = index"
+      @mouseleave="hoveredIndex = null"
     >
       <div class="map-point"></div>
       <div class="popup">
@@ -16,77 +19,103 @@
       </div>
     </div>
     <div>
-      <h2 class="timeline-text">Baringa</h2>
-      <h2 class="timeline-text">TiER1 Performance</h2>
-      <h2 class="timeline-text">Chimerix, Inc</h2>
-      <h2 class="timeline-text">Hawthorne Strategy Group</h2>
-      <h2 class="timeline-text">Camp Lincoln</h2>
+      <h2 class="timeline-text" @click="changeState('newYork')">Baringa</h2>
+      <h2 class="timeline-text" @click="changeState('indianapolis')">
+        TiER1 Performance
+      </h2>
+      <h2 class="timeline-text" @click="changeState('colorado')">
+        Chimerix, Inc
+      </h2>
+      <h2 class="timeline-text" @click="changeState('chicago')">
+        Hawthorne Strategy Group
+      </h2>
+      <h2 class="timeline-text" @click="changeState('minnesota')">
+        Camp Lincoln
+      </h2>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from "pinia";
+import { useTextStore } from "@/stores/ExperienceTextStore";
+
 export default {
+  setup() {
+    const textStore = useTextStore();
+
+    const changeState = (key) => {
+      textStore.changeState(key);
+    };
+
+    return {
+      textStore,
+      changeState,
+    };
+  },
+
   data() {
     return {
       points: [
         {
-          x: 35,
-          y: 45,
+          x: 17.5,
+          y: 47.5,
           location: "Boulder, CO",
           company: "Chimerix, Inc.",
           role: "Data Management",
+          image: "../../assets/colorado.jpg",
         },
         {
-          x: 70.16,
-          y: 43.29,
+          x: 34.6,
+          y: 42.6,
           location: "Indianapolis, IN",
           company: "TiER1 Performance",
           role: "Power BI / M365",
+          image: "../../assets/indianapolis.jpg",
         },
         {
-          x: 66.72,
-          y: 36.08,
+          x: 32.65,
+          y: 35.04,
           location: "Chicago, IL",
           company: "Hawthorne Strategy Group",
           role: "Market Analyst",
+          image: "../../assets/chicago.jpg",
         },
         {
-          x: 92.13,
-          y: 32.47,
+          x: 45.5,
+          y: 32.23,
           location: "New York, NY",
           company: "Baringa Partners",
           role: "Data & Analytics Consulting",
+          image: "../../assets/newYork.jpg",
         },
         {
-          x: 54.92,
-          y: 21.91,
+          x: 27.1,
+          y: 19.96,
           location: "Nisswa, MN",
-          company: "Baringa Partners",
-          role: "Data & Analytics Consulting",
+          company: "Camp Lincoln for Boys",
+          role: "Camp Counselor",
+          image: "../../assets/minnesota.jpg",
         },
       ],
+      hoveredIndex: "null",
     };
-  },
-  methods: {
-    handleClick() {
-      this.$router.push({ name: "experience" });
-    },
   },
 };
 </script>
 
-<style>
+<style scoped>
 .map-container {
   position: relative;
   width: 100%;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   margin-top: 100px;
   display: grid;
   grid-template-columns: 1fr 1fr; /* Two equal-width columns */
   gap: 16px; /* Optional: Space between columns */
   margin-top: 50px;
+  /* outline: 2px solid white; */
 }
 
 .map-image {
@@ -141,7 +170,7 @@ export default {
 }
 
 .timeline-text {
-  font-size: 20px;
+  font-size: 30px;
   transition: transform 0.3s ease, color 0.3s ease;
   color: white;
   display: flex;
@@ -152,7 +181,15 @@ export default {
 }
 
 .timeline-text:hover {
+  /* transform-origin: right; */
   transform: scale(1.3); /* Makes the text grow 30% */
   color: var(--vt-c-green-hover); /* Optional: changes the color on hover */
+  cursor: pointer;
+}
+
+.banner-image {
+  margin-top: 100px;
+  width: 100%;
+  /* height: 100px; */
 }
 </style>
