@@ -15,6 +15,9 @@ import db from "./firebase/init.js";
 import { collection, addDoc } from "firebase/firestore";
 
 export default {
+  created() {
+    console.log("App is initialized");
+  },
   name: "App",
   components: {
     Toolbar,

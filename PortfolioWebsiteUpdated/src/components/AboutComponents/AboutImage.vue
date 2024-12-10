@@ -13,7 +13,7 @@
 .circle-image {
   width: 400px; /* Set the size of the container */
   height: 400px; /* Equal width and height for a circle */
-  background-image: url("../../assets/IMG_6463.jpeg"); /* Your image */
+  background-image: url("../../assets/images/IMG_6463.jpeg"); /* Your image */
   background-size: cover; /* Ensure the image fills the container */
   background-position: center; /* Center the image */
   border-radius: 50%; /* Create the circular shape */
@@ -23,7 +23,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr; /* Two equal-width columns */
   gap: 16px; /* Optional: Space between columns */
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
 .quote {

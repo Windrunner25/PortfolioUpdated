@@ -9,7 +9,7 @@
     "
   >
     <a href="https://www.strava.com/athletes/brianwolf" target="_blank">
-      <img src="../assets/stravaimg.png" alt="strava logo" height="50px" />
+      <img src="../assets/images/stravaimg.png" alt="strava logo" height="50px" />
     </a>
 
     <a href="https://www.linkedin.com/in/brian-wolf-44072021b/" target="_blank">
@@ -24,7 +24,7 @@
         "
       >
         <img
-          src="../assets/linkedin-logo-3.png"
+          src="../assets/images/linkedin-logo-3.png"
           alt="linkedIn logo"
           height="100%"
           width="100%"
@@ -43,7 +43,7 @@
         "
       >
         <img
-          src="../assets/githubimg.png"
+          src="../assets/images/githubimg.png"
           alt="Github logo"
           height="40 px"
           width="40 px"

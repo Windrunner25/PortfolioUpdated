@@ -1,7 +1,7 @@
 <template>
-  <img class="banner-image" src="../../assets/chicago.jpg" />
+  <img class="banner-image" src="../../assets/images/chicago.jpg" />
   <div class="map-container">
-    <img src="../../assets/map.png" class="map-image" />
+    <img src="../../assets/images/map.png" class="map-image" />
     <div
       v-for="(point, index) in points"
       :key="index"

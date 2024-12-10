@@ -1,4 +1,12 @@
 <template>
+  <h1 class="header">
+    <span v-for="(letter, index) in title" :key="index" class="letter">{{
+      letter
+    }}</span>
+  </h1>
+  <p>
+    Please reach out if you'd like to schedule a coffee chat or just connect!
+  </p>
   <div class="form-container">
     <form @submit.prevent="handleSubmit" class="form">
       <div class="form-group">
@@ -29,28 +37,56 @@
           placeholder="Enter your message (optional)"
         ></textarea>
       </div>
-      <button type="submit" class="submit-button">Submit</button>
+      <button type="submit" class="submit-button" :disabled="isLoading">
+        {{ isLoading ? "Submitting..." : "Submit" }}
+      </button>
+      <div v-if="isLoading" class="loading-spinner">Submitting data...</div>
     </form>
   </div>
 </template>
 
 <script>
+import db from "../../firebase/init.js";
+import { collection, addDoc } from "firebase/firestore";
+import { addFormData } from "../../firebase/firebaseService";
+
 export default {
   data() {
     return {
       name: "",
       email: "",
       message: "",
+      title: "Contact!",
+      isLoading: false,
     };
   },
   methods: {
-    handleSubmit() {
+    async handleSubmit() {
       if (!this.name || !this.email) {
-        alert("Name and Email are required!");
+        alert("Please fill out both name and email.");
         return;
       }
-      alert("Form submitted successfully!");
-      // Add additional submission logic here, such as sending data to a server.
+      this.isLoading = true;
+      const colRef = collection(db, "users");
+      const dataObj = {
+        name: this.name,
+        email: this.email,
+        message: this.message,
+      };
+      try {
+        const docId = await addFormData(dataObj); // Call the service
+        this.successMessage = `Form submitted successfully! Document ID: ${docId}`;
+        this.clearForm();
+      } catch (error) {
+        alert("An error occurred while submitting the form. Please try again.");
+      } finally {
+        this.isLoading = false;
+      }
+    },
+    clearForm() {
+      this.name = "";
+      this.email = "";
+      this.message = "";
     },
   },
 };
@@ -60,6 +96,7 @@ export default {
 .form-container {
   max-width: 400px;
   margin: 0 auto;
+  margin-top: 30px;
   padding: 20px;
   background-color: var(--vt-c-black-soft);
   border-radius: 8px;
@@ -94,6 +131,7 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   transition: border-color 0.3s ease;
+  color: white;
 }
 
 input:focus,
@@ -121,5 +159,65 @@ textarea {
 
 .submit-button:hover {
   background-color: var(--vt-c-green-hover-hover);
+}
+
+button:active {
+  background-color: #3e8e41; /* Darker green for active state */
+  transform: translateY(1px); /* Slight press-down effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduced shadow for active state */
+}
+
+.header {
+  display: flex;
+  font-size: 50px;
+  height: 130px;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.letter {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.letter::after {
+  content: "";
+  position: absolute;
+  bottom: 10px; /* Position of the underline */
+  left: 0;
+  width: 0%;
+  height: 2px; /* Thickness of the underline */
+  background-color: currentColor; /* Match text color */
+  transition: width 0.3s ease-in-out;
+  color: var(--vt-c-green-hover);
+}
+
+.header:hover .letter::after {
+  width: 100%; /* Full underline */
+}
+
+.letter:hover::after {
+  width: 100%; /* Individual letter underline on hover */
+}
+
+.header:hover {
+  color: var(--vt-c-green-hover);
+}
+
+p {
+  display: flex;
+  justify-content: center;
+}
+
+.loading-spinner {
+  margin-top: 10px;
+  color: var(--vt-c-green-hover);
+  font-size: 14px;
+}
+.submit-button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
 }
 </style>

@@ -14,7 +14,7 @@ import HomeTitle from "./HomeTitle.vue";
     <div style="display: grid; grid-template-columns: 5fr 1fr">
       <div style="display: flex; justify-content: center; align-items: center">
         <img
-          src="../../assets/side-profile copy.png"
+          src="../../assets/images/side-profile copy.png"
           alt="image of Brian Wolf"
           height="400x"
         />
@@ -29,6 +29,5 @@ import HomeTitle from "./HomeTitle.vue";
   display: grid;
   grid-template-columns: 1fr 1fr; /* Two equal-width columns */
   gap: 16px; /* Optional: Space between columns */
-  margin-top: 50px;
 }
 </style>
