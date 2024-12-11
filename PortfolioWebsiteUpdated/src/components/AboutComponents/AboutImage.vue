@@ -1,4 +1,5 @@
 <template>
+    <div class="top"></div>
   <div class="two-column-grid">
     <div class="circle-image"></div>
     <p class="quote">
@@ -28,5 +29,9 @@
 
 .quote {
   font-size: 40px;
+}
+
+.top{
+    height: 120px;
 }
 </style>

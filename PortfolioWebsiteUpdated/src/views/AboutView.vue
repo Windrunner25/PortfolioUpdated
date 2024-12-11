@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1 style="margin-top: 50px">About</h1>
     <AboutImage />
     <hr />
     <AboutSkills />
