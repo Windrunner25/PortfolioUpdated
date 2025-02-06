@@ -1,5 +1,5 @@
 <template>
-    <div class="top"></div>
+  <div class="top"></div>
   <div class="two-column-grid">
     <div class="circle-image"></div>
     <p class="quote">
@@ -14,9 +14,9 @@
 .circle-image {
   width: 400px; /* Set the size of the container */
   height: 400px; /* Equal width and height for a circle */
-  background-image: url("../../assets/images/IMG_6463.jpeg"); /* Your image */
+  background-image: url("../../assets/images/InterviewPoint1.jpg"); /* Your image */
   background-size: cover; /* Ensure the image fills the container */
-  background-position: center; /* Center the image */
+  background-position: left; /* Center the image */
   border-radius: 50%; /* Create the circular shape */
 }
 
@@ -31,7 +31,7 @@
   font-size: 40px;
 }
 
-.top{
-    height: 120px;
+.top {
+  height: 120px;
 }
 </style>
